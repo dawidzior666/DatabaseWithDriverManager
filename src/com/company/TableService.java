@@ -1,10 +1,7 @@
 package com.company;
 
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.sql.*;
 
 
@@ -18,7 +15,6 @@ public class TableService {
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
-
 
     public String recordRetreive(int r){
         String result="";
@@ -60,9 +56,10 @@ public class TableService {
         String result="";
         try {
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila?user=root&password=Noobplx0&serverTimezone=UTC");
+
             stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO actor VALUES(NULL,'"+first_name+"','"+last_name+"',\"2020-01-06\")");
+            stmt.executeUpdate("DELETE FROM sakila.actor WHERE first_name="+"'"+first_name+"'"+ "AND "+ "last_name="+"'"+last_name+"'");
+          //  stmt.executeUpdate("INSERT INTO actor VALUES(NULL,'"+first_name+"','"+last_name+"',\"2020-01-06\")");
             result = first_name+" "+last_name+" "+last_update;
             conn.close();
         }catch(SQLException e){

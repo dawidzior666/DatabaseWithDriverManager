@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
 	        TableService ts1=new TableService();
         //System.out.println(ts1.recordRetreive(22));
-        System.out.println(ts1.recordUpdate("Zenon","Bąk"));
+        System.out.println(ts1.recordUpdate("Jan","Kowalski"));
 
 
 
