@@ -10,7 +10,7 @@ public class TableService {
     private String last_name;
     private String last_update = "2020-01-06";
 
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila?user=root&password=Noobplx0&serverTimezone=UTC");
+    Connection conn = DriverManager.getConnection("URL");
     Statement stmt = conn.createStatement();
     ResultSet rs = null;
     String result = "";
